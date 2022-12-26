@@ -47,14 +47,14 @@ console.log(userObj.fullName());
  */
 
 /* eslint-disable capitalized-comments */
-someString = 'DEFAULT TEXT';
+
+defString = 'DEFAULT TEXT';
 function defUpperStr(myString) {
-  return myString.toUpperCase();
+  return (myString || defString).toUpperCase();
 }
 
 console.log(defUpperStr('My text')); // MY TEXT
-
-//console.log(defUpperStr()); // DEFAULT TEXT
+console.log(defUpperStr()); // DEFAULT TEXT
 
 /*
  * #4
@@ -73,11 +73,21 @@ console.log(defUpperStr('My text')); // MY TEXT
  * evenFn(20) → [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
  */
 
-// console.log(evenFn(10)); // [2, 4, 6, 8, 10]
+function evenFn(n) {
+  var arr = [];
+  for (var i = 1; i <= n; i++) {
+    if (i % 2 === 0) {
+      arr.push(i);
+    }
+  }
+  return arr;
+}
 
-// console.log(evenFn(15)); // [2, 4, 6, 8, 10, 12, 14]
+console.log(evenFn(10)); // [2, 4, 6, 8, 10]
 
-// console.log(evenFn(20)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+console.log(evenFn(15)); // [2, 4, 6, 8, 10, 12, 14]
+
+console.log(evenFn(20)); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
 /*
  * #5
